@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Galnet.Web.Base" Version="1.0.11" />
+    <PackageReference Include="Galnet.Web.Base.PWA" Version="1.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pages\Pages.csproj" />
   </ItemGroup>
 
 </Project>

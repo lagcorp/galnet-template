@@ -13,7 +13,7 @@ builder.Services.AddGalnetWebBase(
     typeof(Program).Assembly,
     new List<System.Reflection.Assembly>
     {
-        typeof(Galnet.Web.Pages.Details).Assembly
+        typeof(Pages.Details).Assembly
     });
 
 await builder.Build().RunAsync();

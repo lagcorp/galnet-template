@@ -24,10 +24,10 @@ builder.Services.AddGalnetWebBase(
         //ps.AddAuthenticationPlugins();
         //ps.AddFacebookAuthenticationPlugins();
 
-        //ps.AddPlugin("TestWaiter", (ctx) =>
-        //{
-        //    Thread.Sleep(10000);
-        //});
+        ps.AddPlugin("TestWaiter", (ctx) =>
+        {
+            Thread.Sleep(10000);
+        });
 
         new Service().Register(ps);
     });

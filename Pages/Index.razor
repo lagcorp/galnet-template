@@ -14,12 +14,18 @@
     {
         <button class="btn btn-outline-primary" @onclick="()=>click(f)">@f</button>
     }
+    <hr />
+    <button class="btn btn-outline-primary" @onclick="()=>GetSomeHmms()">GetSomeHmms</button>
+    <pre>
+        @data
+    </pre>
 }
 <hr />
 <a href="/details">details</a>
 
 @code{
     PlatformState info = null;
+    public string data = "";
 
     protected override void OnInitialized()
     {
@@ -35,5 +41,15 @@
         await Manager
             .Context()
             .CallWithProgress(ProgressIndicator, name);
+    }
+
+    public async Task GetSomeHmms()
+    {
+        var list = Manager
+                .Context()
+                .Call("GetSomeHmms")
+                .Response<List<string>>();
+
+        data = string.Join(" ", list);
     }
 }

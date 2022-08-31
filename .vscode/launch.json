@@ -9,6 +9,23 @@
             "type": "blazorwasm",
             "request": "launch",
             "cwd": "${workspaceFolder}/Pwa"
-        }
+        },
+        {
+            "name": "web",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build web",
+            "program": "${workspaceFolder}/Pwa/bin/Debug/net6.0/Pwa.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Pwa",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+        },
     ]
 }

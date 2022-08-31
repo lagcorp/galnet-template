@@ -1,3 +1,4 @@
+using Logic;
 using Microsoft.AspNetCore.Components;
 using Pages;
 
@@ -16,22 +17,24 @@ builder.Services.AddGalnetWebBase(
     {
         ShowTopMenu = true,
         //TopMenu = typeof(CustomTopMenu)
-    },
+    }, 
+    withLocalPlatformStatusPlugin: true,    
     pluginInitialization: (ps) =>
     {
         //ps.AddAuthenticationPlugins();
         //ps.AddFacebookAuthenticationPlugins();
 
-        ps.AddPlugin("TestWaiter", (ctx) =>
-        {
-            Thread.Sleep(10000);
-        });
+        //ps.AddPlugin("TestWaiter", (ctx) =>
+        //{
+        //    Thread.Sleep(10000);
+        //});
+
+        new Service().Register(ps);
     });
 
 //builder.Services.AddGalnetAuthentication();
 //builder.Services.AddGalnetGoogleButton();
 //builder.Services.AddGalnetFacebookButton();
-
 
 var app = builder.Build();
 
@@ -46,5 +49,14 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_RootWithGoogleButton");
 //app.MapFallbackToPage("/_Root");
+
+
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+app.MapGet("/galnetapi/hi", () => "Hello World!");
 
 app.Run();

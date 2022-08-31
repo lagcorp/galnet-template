@@ -1,7 +1,39 @@
 ﻿@page "/"
+@using Galnet.Common
+@using Galnet.Plugin.Model
+@using Galnet.Web.Base.Logic
 
+@inject IManager Manager
+@inject IProgressIndicator ProgressIndicator
 <PageTitle>Galnet</PageTitle>
 
-Start page
-
+@if(info!=null)
+{
+    <p>Platform</p>
+    @foreach(var f in this.info.Functions)
+    {
+        <button class="btn btn-outline-primary" @onclick="()=>click(f)">@f</button>
+    }
+}
+<hr />
 <a href="/details">details</a>
+
+@code{
+    PlatformState info = null;
+
+    protected override void OnInitialized()
+    {
+        this.info = 
+            Manager
+                .Context()
+                .Call("Platform")
+                .Response<PlatformState>();
+    }
+
+    public async Task click(string name)
+    {
+        await Manager
+            .Context()
+            .CallWithProgress(ProgressIndicator, name);
+    }
+}

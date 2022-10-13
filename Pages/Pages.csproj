@@ -12,9 +12,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Galnet" Version="1.0.33" />
-		<PackageReference Include="Galnet.Web.Base" Version="1.0.33" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+		<PackageReference Include="Galnet" Version="1.0.38" />
+		<PackageReference Include="Galnet.Web.Base" Version="1.0.38" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.10" />
 	</ItemGroup>
 
 </Project>

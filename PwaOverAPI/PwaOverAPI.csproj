@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Galnet.Plugin.TN" Version="1.0.33" />
-    <PackageReference Include="Galnet.Web.Base" Version="1.0.33" />
-    <PackageReference Include="Galnet.Web.Base.PWA" Version="1.0.33" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.8" PrivateAssets="all" />
+    <PackageReference Include="Galnet.Plugin.TN" Version="1.0.38" />
+    <PackageReference Include="Galnet.Web.Base" Version="1.0.38" />
+    <PackageReference Include="Galnet.Web.Base.PWA" Version="1.0.38" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>

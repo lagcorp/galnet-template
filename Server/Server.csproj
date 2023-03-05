@@ -6,15 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Galnet.Web.Base.Server" Version="1.0.33" />
+  </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pages\Pages.csproj" />
+    <ProjectReference Include="..\..\Logic\Logic.csproj" />
+    <ProjectReference Include="..\..\Pages\Pages.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Galnet.Web.Base" Version="1.0.11" />
-    <PackageReference Include="Galnet.Web.Base.Server" Version="1.0.11" />
-  </ItemGroup>
-  
 
 </Project>
